@@ -10,6 +10,9 @@ object MainScreen : Screen<MainScreen>() {
     private val simpleButton = KButton { withId(R.id.simple_activity_btn) }
     private val screenTitle = KTextView { withId(R.id.title) }
 
+    private val listActivityButton = KButton { withId(R.id.list_activity_btn) }
+
+    private val flakyButton = KButton { withId(R.id.flaky_activity_btn) }
 
     fun clickSimpleButton() {
         simpleButton.click()
@@ -20,5 +23,13 @@ object MainScreen : Screen<MainScreen>() {
             isDisplayed()
             hasText(title)
         }
+    }
+
+    fun clickListActivityButton() {
+        listActivityButton.click()
+    }
+
+    fun clickFlakyButton() {
+        flakyButton.click()
     }
 }
