@@ -1,4 +1,4 @@
-package com.kaspersky.kaspresso.tutorial.test.screen
+package com.kaspersky.kaspresso.tutorial.test.screens
 
 import android.view.View
 import com.kaspersky.kaspresso.screens.KScreen

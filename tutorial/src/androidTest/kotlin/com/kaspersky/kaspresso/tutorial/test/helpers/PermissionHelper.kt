@@ -2,7 +2,6 @@ package com.kaspersky.kaspresso.tutorial.test.helpers
 
 import androidx.test.uiautomator.UiDevice
 import androidx.test.uiautomator.UiSelector
-import junit.framework.TestCase.assertTrue
 
 object PermissionHelper {
     fun allow(device: UiDevice) {

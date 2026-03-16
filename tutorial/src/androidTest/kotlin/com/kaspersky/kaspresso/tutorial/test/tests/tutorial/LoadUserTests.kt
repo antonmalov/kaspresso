@@ -1,17 +1,11 @@
-package com.kaspersky.kaspresso.tutorial.test.tests
+package com.kaspersky.kaspresso.tutorial.test.tests.tutorial
 
-import androidx.test.ext.junit.rules.activityScenarioRule
-import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
-import com.kaspersky.kaspresso.tutorial.MainActivity
-import com.kaspersky.kaspresso.tutorial.test.screen.LoadUserScreen
-import com.kaspersky.kaspresso.tutorial.test.screen.MainScreen
-import org.junit.Rule
+import com.kaspersky.kaspresso.tutorial.test.BaseTest
+import com.kaspersky.kaspresso.tutorial.test.screens.LoadUserScreen
+import com.kaspersky.kaspresso.tutorial.test.screens.MainScreen
 import org.junit.Test
 
-class LoadUserTests : TestCase() {
-
-    @get:Rule
-    val activityRule = activityScenarioRule<MainActivity>()
+class LoadUserTests : BaseTest() {
 
     @Test
     fun checkLoadingAndError() = run {

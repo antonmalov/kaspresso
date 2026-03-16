@@ -1,4 +1,4 @@
-package com.kaspersky.kaspresso.tutorial.test.screen
+package com.kaspersky.kaspresso.tutorial.test.screens
 
 import com.kaspersky.kaspresso.tutorial.R
 import io.github.kakaocup.kakao.screen.Screen
@@ -10,12 +10,13 @@ object MainScreen : Screen<MainScreen>() {
     private val simpleButton = KButton { withId(R.id.simple_activity_btn) }
     private val screenTitle = KTextView { withId(R.id.title) }
     private val listActivityButton = KButton { withId(R.id.list_activity_btn) }
-
     private val loginButton = KButton { withId(R.id.login_activity_btn) }
-
     private val flakyButton = KButton { withId(R.id.flaky_activity_btn) }
     private val loadUserButton = KButton { withId(R.id.load_user_activity_btn) }
-    private val notificationButton = KButton { withId(R.id.notification_activity_btn)}
+    private val notificationButton = KButton { withId(R.id.notification_activity_btn) }
+    private val internetAvailability = KButton { withId(R.id.wifi_activity_btn) }
+    private val makeCallButton = KButton { withId(R.id.make_call_activity_btn) }
+
 
     fun clickSimpleButton() {
         simpleButton.click()
@@ -46,5 +47,13 @@ object MainScreen : Screen<MainScreen>() {
 
     fun clickNotificationActivity() {
         notificationButton.click()
+    }
+
+    fun clickInternetAvailability() {
+        internetAvailability.click()
+    }
+
+    fun clickMakeCallButton() {
+        makeCallButton.click()
     }
 }
