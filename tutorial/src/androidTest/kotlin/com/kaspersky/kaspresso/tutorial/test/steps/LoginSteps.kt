@@ -1,7 +1,6 @@
 package com.kaspersky.kaspresso.tutorial.test.steps
 
 import com.kaspersky.kaspresso.tutorial.test.screens.LoginScreen
-import com.kaspersky.kaspresso.tutorial.test.screens.MainScreen
 
 object LoginSteps {
 

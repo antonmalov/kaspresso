@@ -1,7 +1,7 @@
 package com.kaspersky.kaspresso.tutorial.test.tests.tutorial
 
 import android.R
-import com.kaspersky.kaspresso.tutorial.test.BaseTest
+import com.kaspersky.kaspresso.tutorial.test.base.BaseTest
 import com.kaspersky.kaspresso.tutorial.test.screens.MainScreen
 import com.kaspersky.kaspresso.tutorial.test.screens.NoteListScreen
 import org.junit.Test

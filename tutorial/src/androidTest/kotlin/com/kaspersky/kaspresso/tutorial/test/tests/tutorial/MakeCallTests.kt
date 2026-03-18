@@ -1,12 +1,8 @@
 package com.kaspersky.kaspresso.tutorial.test.tests.tutorial
 
-import com.kaspersky.kaspresso.tutorial.test.BaseTest
+import com.kaspersky.kaspresso.tutorial.test.base.BaseTest
 import com.kaspersky.kaspresso.tutorial.test.data.TestData
-import com.kaspersky.kaspresso.tutorial.test.helpers.CallHelper
 import com.kaspersky.kaspresso.tutorial.test.helpers.DeviceHelper
-import com.kaspersky.kaspresso.tutorial.test.helpers.PermissionHelper
-import com.kaspersky.kaspresso.tutorial.test.screens.CallScreen
-import com.kaspersky.kaspresso.tutorial.test.screens.MainScreen
 import com.kaspersky.kaspresso.tutorial.test.steps.CallSteps
 import org.junit.Test
 

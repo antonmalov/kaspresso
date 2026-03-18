@@ -1,6 +1,6 @@
 package com.kaspersky.kaspresso.tutorial.test.tests.tutorial
 
-import com.kaspersky.kaspresso.tutorial.test.BaseTest
+import com.kaspersky.kaspresso.tutorial.test.base.BaseTest
 import com.kaspersky.kaspresso.tutorial.test.screens.InternetAvailabilityScreen
 import com.kaspersky.kaspresso.tutorial.test.screens.MainScreen
 import org.junit.Test
