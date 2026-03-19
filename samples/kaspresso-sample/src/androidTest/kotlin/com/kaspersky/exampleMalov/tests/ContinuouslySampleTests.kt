@@ -1,31 +1,21 @@
 package com.kaspersky.exampleMalov.tests
 
 import com.kaspersky.exampleMalov.base.BaseTest
-import com.kaspersky.exampleMalov.screens.ContinuouslySampleScreen
-import com.kaspersky.exampleMalov.screens.MainScreen
-import com.kaspersky.exampleMalov.steps.ContinuouslySteps
-import com.kaspersky.exampleMalov.utils.WaitExtensions.waitUntil
+import com.kaspersky.exampleMalov.steps.ContinuouslySteps.checkInitialState
+import com.kaspersky.exampleMalov.steps.ContinuouslySteps.startBackgroundWork
+import com.kaspersky.exampleMalov.steps.ContinuouslySteps.verifyButtonEnabled
+import com.kaspersky.exampleMalov.steps.ContinuouslySteps.waitWorkFinished
+import com.kaspersky.exampleMalov.steps.MainSteps.openContinuouslyScreen
 import org.junit.Test
 
 class ContinuouslySampleTests : BaseTest() {
 
     @Test
-    fun checkUpdateButtonTest() = run {
-
-        step("Open continuously screen") {
-            MainScreen.clickContinuouslySampleButton()
-        }
-
-        step("Check initial state") {
-            ContinuouslySteps.checkInitialState(device.uiDevice)
-        }
-
-        step("Start work") {
-            ContinuouslySteps.startWork()
-        }
-
-        step("Wait until enabled") {
-            waitUntil { ContinuouslySampleScreen.isButtonEnabled() }
-        }
+    fun startButtonStateChangesCorrectly() = run {
+        openContinuouslyScreen()
+        checkInitialState()
+        startBackgroundWork()
+        waitWorkFinished()
+        verifyButtonEnabled()
     }
 }

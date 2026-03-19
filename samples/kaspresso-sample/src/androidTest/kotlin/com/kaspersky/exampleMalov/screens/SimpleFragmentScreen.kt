@@ -9,10 +9,10 @@ import io.github.kakaocup.kakao.text.KTextView
 
 object SimpleFragmentScreen : Screen<SimpleFragmentScreen>() {
 
-    val simpleTitle = KTextView { withId(R.id.text_view_title) }
-    val simpleButton1 = KButton { withId(R.id.button_1) }
-    val simpleButton2 = KButton { withId(R.id.button_2) }
-    val textField = KEditText { withId(R.id.edit) }
+    private val simpleTitle = KTextView { withId(R.id.text_view_title) }
+    private val simpleButton1 = KButton { withId(R.id.button_1) }
+    private val simpleButton2 = KButton { withId(R.id.button_2) }
+    private val textField = KEditText { withId(R.id.edit) }
 
     fun checkTitle(title: String) {
         simpleTitle.isDisplayed()
@@ -23,12 +23,21 @@ object SimpleFragmentScreen : Screen<SimpleFragmentScreen>() {
         simpleButton1.click()
     }
 
+    fun checkButton2Visible() {
+        simpleButton2.isVisible()
+    }
+
     fun clickButton2() {
         simpleButton2.click()
     }
 
-    fun checkVisibleTextField() {
-        textField.isVisible()
+    fun isTextFieldVisible(): Boolean {
+        return try {
+            textField.isVisible()
+            true
+        } catch (e: Throwable) {
+            false
+        }
     }
 
     fun inputNewText(text: String) {

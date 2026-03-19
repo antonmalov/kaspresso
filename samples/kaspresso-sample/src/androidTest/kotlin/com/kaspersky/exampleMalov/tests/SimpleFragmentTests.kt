@@ -2,9 +2,14 @@ package com.kaspersky.exampleMalov.tests
 
 import com.kaspersky.exampleMalov.base.BaseTest
 import com.kaspersky.exampleMalov.data.SimpleTestData
-import com.kaspersky.exampleMalov.screens.SimpleFragmentScreen
-import com.kaspersky.exampleMalov.steps.SimpleSteps
-import com.kaspersky.exampleMalov.utils.WaitExtensions.waitUntil
+import com.kaspersky.exampleMalov.steps.SimpleSteps.checkButton2Visible
+import com.kaspersky.exampleMalov.steps.SimpleSteps.waitForInputField
+import com.kaspersky.exampleMalov.steps.SimpleSteps.clickFirstButton
+import com.kaspersky.exampleMalov.steps.SimpleSteps.enterText
+import com.kaspersky.exampleMalov.steps.SimpleSteps.goToTextInputState
+import com.kaspersky.exampleMalov.steps.SimpleSteps.openSimpleScreen
+import com.kaspersky.exampleMalov.steps.SimpleSteps.verifySimpleScreenOpened
+import com.kaspersky.exampleMalov.steps.SimpleSteps.verifyText
 import org.junit.Test
 
 
@@ -12,58 +17,28 @@ class SimpleFragmentTests : BaseTest() {
 
     @Test
     fun checkTitle() = run {
-
-        step("Open simple Fragment screen") {
-            SimpleSteps.openSimpleScreen()
-        }
+        openSimpleScreen()
+        verifySimpleScreenOpened()
     }
 
     @Test
-    fun button2shouldBeVisibleTest() = run {
-        step("Open simple Fragment screen") {
-            SimpleSteps.openSimpleScreen()
-        }
-
-        step("Click button1") {
-            SimpleSteps.clickFirstButton()
-        }
-
-        step("Button2 should be visible") {
-            SimpleFragmentScreen.simpleButton2.isVisible()
-        }
+    fun button2ShouldBeVisibleAfterClickingFirstButton() = run {
+        openSimpleScreen()
+        clickFirstButton()
+        checkButton2Visible()
     }
 
     @Test
     fun textInputShouldBeVisibleTest() = run {
-        step("Open simple Fragment screen") {
-            SimpleSteps.openSimpleScreen()
-        }
-
-        step("Go to input state") {
-            SimpleSteps.goToTextInputState()
-        }
-
-        step("Check input field") {
-            waitUntil {
-                SimpleFragmentScreen.checkVisibleTextField()
-            }
-
-
-        }
+        openSimpleScreen()
+        goToTextInputState()
+        waitForInputField()
     }
 
     @Test
     fun updateTextTest() = run {
-        step("Open simple Fragment screen") {
-            SimpleSteps.openSimpleScreen()
-        }
-
-        step("Input text") {
-            SimpleSteps.enterText(SimpleTestData.NEW_TEXT)
-        }
-
-        step("check new text") {
-            SimpleFragmentScreen.checkText(SimpleTestData.NEW_TEXT)
-        }
+        openSimpleScreen()
+        enterText(SimpleTestData.NEW_TEXT)
+        verifyText(SimpleTestData.NEW_TEXT)
     }
 }
