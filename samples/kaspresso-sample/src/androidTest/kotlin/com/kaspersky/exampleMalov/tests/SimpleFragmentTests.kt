@@ -4,10 +4,11 @@ import com.kaspersky.exampleMalov.base.BaseTest
 import com.kaspersky.exampleMalov.data.SimpleTestData
 import com.kaspersky.exampleMalov.screens.SimpleFragmentScreen
 import com.kaspersky.exampleMalov.steps.SimpleSteps
+import com.kaspersky.exampleMalov.utils.WaitExtensions.waitUntil
 import org.junit.Test
 
 
-class SimpleFragmentTest : BaseTest() {
+class SimpleFragmentTests : BaseTest() {
 
     @Test
     fun checkTitle() = run {
@@ -43,9 +44,11 @@ class SimpleFragmentTest : BaseTest() {
         }
 
         step("Check input field") {
-            flakySafely(5000) {
+            waitUntil {
                 SimpleFragmentScreen.checkVisibleTextField()
             }
+
+
         }
     }
 
