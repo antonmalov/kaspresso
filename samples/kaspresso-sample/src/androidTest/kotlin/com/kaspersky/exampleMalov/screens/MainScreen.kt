@@ -9,6 +9,7 @@ object MainScreen : Screen<MainScreen>() {
 
     val simpleFragmentButton = KButton { withId(R.id.activity_main_simple_sample_button) }
     val continuouslySampleButton = KButton { withId(R.id.activity_main_continuously_sample_button) }
+    val scrollviewButton = KButton { withId(R.id.activity_main_auto_scroll_scrollView_with_padding_button)}
 
     fun clickSimpleFragmentButton() {
         simpleFragmentButton.click()
@@ -16,5 +17,9 @@ object MainScreen : Screen<MainScreen>() {
 
     fun clickContinuouslySampleButton() {
         continuouslySampleButton.click()
+    }
+
+    fun clickScrollviewButton() {
+        scrollviewButton.click()
     }
 }

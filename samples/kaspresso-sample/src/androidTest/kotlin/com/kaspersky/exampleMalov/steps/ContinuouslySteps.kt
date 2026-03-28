@@ -31,14 +31,13 @@ object ContinuouslySteps {
             waitUntil {
                 ContinuouslySampleScreen.isStartButtonEnabled()
             }
+            step("Button became enabled") { } // пустой блок, просто для логирования
         }
     }
 
     fun TestContext<*>.verifyButtonEnabled() {
         step("Verify start button is enabled") {
-            ContinuouslySampleScreen {
-                checkStartButtonEnabled()
-            }
+            ContinuouslySampleScreen.checkStartButtonEnabled()
         }
     }
 }

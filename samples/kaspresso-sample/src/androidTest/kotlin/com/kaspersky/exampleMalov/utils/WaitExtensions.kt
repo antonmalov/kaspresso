@@ -4,11 +4,13 @@ import com.kaspersky.kaspresso.testcases.core.testcontext.TestContext
 
 object WaitExtensions {
     fun TestContext<*>.waitUntil(
-        timeout: Long = 5000,
-        action: () -> Unit
+        timeout: Long = 15000,
+        condition: () -> Boolean
     ) {
         flakySafely(timeoutMs = timeout) {
-            action()
+            if (!condition()) {
+                throw AssertionError("Condition not met within $timeout ms")
+            }
         }
     }
 }

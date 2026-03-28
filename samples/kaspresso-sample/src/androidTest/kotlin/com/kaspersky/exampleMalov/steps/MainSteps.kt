@@ -10,4 +10,10 @@ object MainSteps {
             MainScreen.clickContinuouslySampleButton()
         }
     }
+
+    fun TestContext<*>.openScrollviewScreen() {
+        step("Open scrollview screen") {
+            MainScreen.clickScrollviewButton()
+        }
+    }
 }
